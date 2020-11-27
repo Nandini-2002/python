@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    long A,B,C,D,lcm,hcf,T;
+    int t;
+    scanf("%d",&t);
+    for(int i=t;t>0;t--)
+    {
+        scanf("%ld%ld",&A,&B);
+        C=A;
+        D=B;
+        while(B!=0)
+        {
+            T=B;
+            B=A%B;
+            A=T;
+        }
+        hcf=A;
+        lcm=(C*D)/hcf;
+        printf("%ld %ld\n",lcm,hcf);
+    }
+    return 0;
+}
